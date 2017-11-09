@@ -28,6 +28,10 @@ namespace Assets.Scripts
             _layerMask = LayerMask.GetMask("ControllerRayCast");
         }
 
+        void Awake()
+        {
+            DontDestroyOnLoad(transform.gameObject);
+        }
         void DragAndDropAim()
         {
 
@@ -131,6 +135,8 @@ namespace Assets.Scripts
                 DragAndDropAim();
             }
             if (Input.GetKeyDown(KeyCode.Keypad0))
+                ResetBall();
+            if (Input.GetKeyDown(KeyCode.Space))
                 ResetBall();
         }
 
