@@ -25,8 +25,6 @@ public class MovingObstacle : MonoBehaviour {
         if (currentTime > movingTime || currentTime < 0 )
             direction = -direction;
 
-        Vector3.ro
-
         float perct = currentTime/movingTime;        
         Obstacle.transform.position = Vector3.Lerp(Point1.position, Point2.position, perct);
 
