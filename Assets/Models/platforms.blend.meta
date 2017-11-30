@@ -1,45 +1,11 @@
 fileFormatVersion: 2
-guid: 70f414080e989434ea5af10266103962
-timeCreated: 1511561949
+guid: 55aed043441a5f24682ddbef8d1a6d91
+timeCreated: 1512058410
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Concave
-    100002: convex
-    100004: Cube_003
-    100006: Goal
-    100008: //RootNode
-    400000: Concave
-    400002: convex
-    400004: Cube_003
-    400006: Goal
-    400008: //RootNode
-    2300000: Concave
-    2300002: convex
-    2300004: Cube_003
-    2300006: Goal
-    3300000: Concave
-    3300002: convex
-    3300004: Cube_003
-    3300006: Goal
-    4300000: Cube_003
-    4300002: Goal
-    4300004: convex
-    4300006: Concave
-    7400000: Default Take
-    9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: a33636ec856e18c4b9c5414e7b219d10, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_001
-    second: {fileID: 2100000, guid: 2dce1c56e05b81a4ab1c15611d33ef65, type: 2}
+  fileIDToRecycleName: {}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

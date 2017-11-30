@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5371588d42789e34781c4c1546c325a9
-timeCreated: 1511562880
+guid: f0fcbff30ea488941839af53c6f8a35f
+timeCreated: 1512058411
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -16,20 +16,10 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: a33636ec856e18c4b9c5414e7b219d10, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Material.001
     second: {fileID: 2100000, guid: 421691808f7bc214b80b6e41e1e92ca8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: b031559094a0af3489a75e6f6d44f4db, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -60,10 +50,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
