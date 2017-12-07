@@ -136,7 +136,9 @@ namespace Assets.Scripts
             }
             if (Input.GetKeyDown(KeyCode.Keypad0))
                 ResetBall();
-            if (Input.GetKeyDown(KeyCode.Space))
+            /*if (Input.GetKeyDown(KeyCode.Space))
+                ResetBall();*/
+            if (Input.GetKeyDown(KeyCode.Escape))
                 ResetBall();
         }
 

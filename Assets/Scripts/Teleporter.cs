@@ -32,7 +32,7 @@ public class Teleporter : MonoBehaviour
         OtherTeleporter.Disable();
         //print(OtherTeleporter.transform.position);
         //print(this.name);
-        print(OtherTeleporter.gameObject.transform.rotation.eulerAngles.y);
+        //print(OtherTeleporter.gameObject.transform.rotation.eulerAngles.y);
         golfPlayer.GetComponent<Rigidbody>().velocity =
             Quaternion.AngleAxis(OtherTeleporter.gameObject.transform.rotation.eulerAngles.y, Vector3.up) * golfPlayer.GetComponent<Rigidbody>().velocity;
         golfPlayer.transform.position = OtherTeleporter.gameObject.transform.position;
