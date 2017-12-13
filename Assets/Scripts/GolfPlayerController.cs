@@ -22,9 +22,16 @@ namespace Assets.Scripts
         public float ForceScaling = .25f;
         public float MinSpeedToCountAsRolling = 10;
 
+        public GameObject AimIndicator;
+        public Transform AimIndicatorScale;
+
+        public Transform CameraPosition;
+
         // Use this for initialization
         void Start()
         {
+
+            AimIndicator.SetActive(false);
             _layerMask = LayerMask.GetMask("ControllerRayCast");
         }
 
@@ -32,12 +39,13 @@ namespace Assets.Scripts
         {
             DontDestroyOnLoad(transform.gameObject);
         }
-        void DragAndDropAim()
+
+        private void DragAndDropAim()
         {
 
             if (!_isAiming && Input.GetMouseButtonDown(0))
             {
-                print("mb down");
+                //print("mb down");
                 _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(_ray, _maxRayDistance, _layerMask))
                 {
@@ -45,10 +53,11 @@ namespace Assets.Scripts
                     print("D&D Start Posi: " + _dragAndDropStart);
                 }
                 _isAiming = true;
+                AimIndicator.SetActive(true);
             }
             if (_isAiming)
             {
-                /*
+                
                 if (Input.GetMouseButton(0))
                 {
                     _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -56,12 +65,21 @@ namespace Assets.Scripts
                     {
                         _dragAndDropCurrent = _ray.GetPoint(_maxRayDistance);
                         //print("D&D Posi: " + _dragAndDropCurrent);
+
+                        //indicate the aim direction
+                        Vector3 aimVector3 = _dragAndDropCurrent - _dragAndDropStart;
+                        //float magnitude = aimVector3.magnitude;
+                        //print(magnitude);
+                        //AimIndicatorScale.localScale = new Vector3(1,1,magnitude/10);
+
+                        _dragAndDropCurrent.y = 0;
+                        AimIndicator.transform.rotation = Quaternion.LookRotation(aimVector3.normalized,Vector3.up);
                     }
-                }*/
+                }
 
                 if (Input.GetMouseButtonUp(0))
                 {
-                    print("mb up");
+                    //print("mb up");
                     _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(_ray, _maxRayDistance, _layerMask))
                     {
@@ -80,6 +98,7 @@ namespace Assets.Scripts
                         print("Direction: " + direction);
                     }
                     _isAiming = false;
+                    AimIndicator.SetActive(false);
                 }
             }
         }
@@ -122,8 +141,19 @@ namespace Assets.Scripts
             if (Input.GetKeyDown(KeyCode.Keypad9))
                 BlowBall((Vector3.right + Vector3.forward).normalized, BlowStrenght);
 
+            if (Input.GetKeyDown(KeyCode.V))
+                AimIndicator.SetActive(!AimIndicator.activeSelf);
 
 
+            Vector3 aimingVector = transform.position - CameraPosition.position;
+            aimingVector.y = 0;
+
+            _dragAndDropCurrent.y = 0;
+            AimIndicator.transform.rotation = Quaternion.LookRotation(aimingVector.normalized, Vector3.up);
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                BlowBall(aimingVector.normalized, BlowStrenght);
+            }
         }
         // Update is called once per frame
         void Update()
