@@ -72,7 +72,7 @@ MonoBehaviour:
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
   webcam:
-    deviceNameSetInEditor: 
+    deviceNameSetInEditor: Webcam C170
     flipHorizontally: 0
     turnOffWebCam: 1
     renderTextureLayer: 30
