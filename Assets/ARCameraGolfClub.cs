@@ -25,7 +25,7 @@ public class ARCameraGolfClub : MonoBehaviour {
         AimingVector *= y * force;
         //print(AimingVector);
         var aimAngle = Vector3.Angle(AimingVector, Vector3.forward);
-        print(aimAngle);
+        //print(aimAngle);
         AimingDirection.transform.eulerAngles = new Vector3(90, aimAngle + 90, 0);
         AimingDirection.transform.position = GolfBall.transform.position + AimingVector * 2;
         AimingDirection.transform.localPosition = new Vector3(0, 4, 0);

@@ -21,6 +21,7 @@ namespace Assets.Scripts
         float _maxRayDistance = 100000;
         public float ForceScaling = .25f;
         public float MinSpeedToCountAsRolling = 10;
+        public float MaxBlowPower = 1000;
 
         public GameObject AimIndicator;
         public Transform AimIndicatorScale;
@@ -175,7 +176,7 @@ namespace Assets.Scripts
         public void BlowBall(Vector3 direction, float force)
         {
             //Check if ball is stoll rolling
-            Ball.GetComponent<Rigidbody>().AddForce(direction * force);
+            Ball.GetComponent<Rigidbody>().AddForce(direction * Mathf.Clamp(force, 0, MaxBlowPower));
             _blows++;
         }
 
