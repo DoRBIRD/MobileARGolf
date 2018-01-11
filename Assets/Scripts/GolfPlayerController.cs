@@ -21,7 +21,7 @@ namespace Assets.Scripts
         float _maxRayDistance = 100000;
         public float ForceScaling = .25f;
         public float MinSpeedToCountAsRolling = 10;
-        public float MaxBlowPower = 1000;
+        public float MaxBlowPower;
 
         public GameObject AimIndicator;
         public Transform AimIndicatorScale;
