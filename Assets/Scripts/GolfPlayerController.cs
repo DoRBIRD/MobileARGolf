@@ -28,6 +28,8 @@ namespace Assets.Scripts
 
         public Transform CameraPosition;
 
+		private bool _cameraAim = false;
+
         // Use this for initialization
         void Start()
         {
@@ -40,6 +42,10 @@ namespace Assets.Scripts
         {
             DontDestroyOnLoad(transform.gameObject);
         }
+
+		public void ToggleInputMode() {
+			_cameraAim = !_cameraAim;
+		}
 
         private void DragAndDropAim()
         {
@@ -151,10 +157,10 @@ namespace Assets.Scripts
 
             _dragAndDropCurrent.y = 0;
             AimIndicator.transform.rotation = Quaternion.LookRotation(aimingVector.normalized, Vector3.up);
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                BlowBall(aimingVector.normalized, BlowStrenght);
-            }
+			if (Input.GetKeyDown(KeyCode.C) || _cameraAim && Input.GetMouseButtonDown(0))
+			{
+				BlowBall(aimingVector.normalized, BlowStrenght);
+			}
         }
         // Update is called once per frame
         void Update()
@@ -163,7 +169,11 @@ namespace Assets.Scripts
             if (!_ballStillRolling)
             {
                 KeyInputManager();
-                DragAndDropAim();
+				if (_cameraAim) {
+					//
+				} else {
+					DragAndDropAim();
+				}
             }
             if (Input.GetKeyDown(KeyCode.Keypad0))
                 ResetBall();
