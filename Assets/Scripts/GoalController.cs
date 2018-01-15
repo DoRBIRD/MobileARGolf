@@ -27,7 +27,7 @@ namespace Assets.Scripts
         void StoreHighscore(int newHighscore)
         {
             string PLAYER = PlayerPrefs.GetString("Player_name", "Jonas");
-            string LEVEL = "level1";
+            string LEVEL = PlayerPrefs.GetString("CurrentLevel", "No Level");
             string key = "highscore_" + PLAYER+"_LEVEL_"+ LEVEL;
             print(PLAYER +" just won with score: " + newHighscore);
             int oldHighscore = PlayerPrefs.GetInt(key, int.MaxValue);

@@ -10,7 +10,9 @@ namespace Assets.Scripts
     class ImageTargetActivateLevel : MonoBehaviour,
         ITrackableEventHandler
     {
-        public GameObject IsTargetTrackedUiText;
+        public GameObject LevelGameObject;
+        public String LevelName;
+
 
         private TrackableBehaviour _mTrackableBehaviour;
 
@@ -33,12 +35,18 @@ namespace Assets.Scripts
                 newStatus == TrackableBehaviour.Status.TRACKED ||
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
-                IsTargetTrackedUiText.SetActive(false);
+                LevelGameObject.SetActive(true);
+
+                PlayerPrefs.SetString("CurrentLevel", LevelName);
+                PlayerPrefs.Save();
+
             }
             else
             {
-                IsTargetTrackedUiText.SetActive(true);
-            }
+                LevelGameObject.SetActive(false);
+                PlayerPrefs.SetString("CurrentLevel", "No Level");
+                PlayerPrefs.Save();
+                }
         }
         
     }

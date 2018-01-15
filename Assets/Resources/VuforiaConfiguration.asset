@@ -16,8 +16,8 @@ MonoBehaviour:
     ufoLicenseKey: QVRUbnBhTC8vLy8vQUFBQUtOL2JPeUM5NVVvL251ZlI5akR1MmRvOHFZUGRGNWJjekhwbCtTVUllREE4WDF5RUhuRTB5amZDT01UVkw1TW4vL1YyREtKWTFQWTFZdjBWSVRQUVl6MERSZzdMZkhySTJnUmNteXJIQUtwMzA5eDBKZTdmN1JMbmhaL2RrMFBrTXBiSEFuTS9SRTR5YWJsL1F4VkV0Vlo1cG1HWlhCVkNxR1NNNkpUQldheWo3ZGcxc0xDKzZTS29FU1htSW81V1NmYlBGMDh5M2xodkYvRm1ZanhRbXhsNlFCNmlGRi9jQk4xZ2FWVFdya3I0djRtTXp2ZDVRNXFSMktOcS9wSVpvRzB3RXozNU1aNTBrNmpIWmlMMWxnSjNDREFyMFFoYldhOHpIODF4ZDQ0aU1qRm1wNEJqRXkxMzBIZ2VQQkFEd2dZTm12Qkk1WFRUM0pFdlFPVVhaM3BRWjIrVlFMbFdDM2Nqcm45WXFLUXc=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
+    maxSimultaneousImageTargets: 2
+    maxSimultaneousObjectTargets: 2
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
@@ -74,5 +74,5 @@ MonoBehaviour:
   webcam:
     deviceNameSetInEditor: Webcam C170
     flipHorizontally: 0
-    turnOffWebCam: 1
-    renderTextureLayer: 30
+    turnOffWebCam: 0
+    renderTextureLayer: 10

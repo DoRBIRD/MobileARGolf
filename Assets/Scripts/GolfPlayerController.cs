@@ -33,14 +33,14 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-
+            ResetBall();
             AimIndicator.SetActive(false);
             _layerMask = LayerMask.GetMask("ControllerRayCast");
         }
 
         void Awake()
         {
-            DontDestroyOnLoad(transform.gameObject);
+           // DontDestroyOnLoad(transform.gameObject);
         }
 
 		public void ToggleInputMode() {
@@ -165,6 +165,9 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            //failsave
+            if(transform.position.y<-1000) ResetBall();
+
             _ballStillRolling = GetComponent<Rigidbody>().velocity.magnitude > MinSpeedToCountAsRolling;
             if (!_ballStillRolling)
             {
